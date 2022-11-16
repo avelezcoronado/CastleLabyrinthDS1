@@ -4,10 +4,11 @@ import java.util.Arrays;
 
 import javax.swing.JOptionPane;
 
-public class questionTemp extends player {
+public class questionTemp {
 
+    doors makeDoor = new doors();
    
-    private  String Question[] = {
+    String Question[] = {
         "Which statement is true about Java?",
         "Which component is used to compile, debug and execute the java programs?",
         "Identify the corrected definition of a package",
@@ -50,7 +51,7 @@ public class questionTemp extends player {
 
 // multiple choise for each question
 
-private String multipleChoiceAnswers[][]= {
+String multipleChoiceAnswers[][]= {
         {"Java is a sequence-dependent programming language","Java is a code dependent programming language","Java is a platform-independent programming language"},
         {"JRE","JIT","JDK","JVM"},
         {"A package is a collection of editing tools", "A package is a collection of classes","A package is a collection of classes and interfaces", "A package is a collection of interfaces"},
@@ -82,29 +83,24 @@ private String multipleChoiceAnswers[][]= {
 };
 
 // arraqy of correct question answer
-private String CorrectAnswers[] = {"“Java is a platform-independent programming language”, ”JDK”,”A package is a collection of classes and interfaces”, ”Use of pointers”, ”.class”, ”An object is an instance of a class”, “The organization of components interacting to achieve a coherent common behavior”, “name[1] = “book””, “.java”, “strictfp”, “Constructor”, “import”, “32 and 64”, “char[] ch = new char[5]”, “objects”, “int[] A = {1, 2, 3}”, “When it doesn’t make sense to have objects of that class”, “java.lang”, “s1 == s2”, “Book(Book b) {}”, “3.0”, “static”, “Instance variables”, “False”, “False”, “True”, “True”, “False”, “False”, “True”"};
+String CorrectAnswers[] = {"Java is a platform-independent programming language", "JDK","A package is a collection of classes and interfaces", "Use of pointers", ".class", "An object is an instance of a class", "The organization of components interacting to achieve a coherent common behavior", "name[1] = \"book\"", ".java", "strictfp", "Constructor", "import", "32 and 64", "char[] ch = new char[5]", "objects", "int[] A = {1, 2, 3}", "When it doesn’t make sense to have objects of that class", "java.lang", "s1 == s2", "Book(Book b) {}", "3.0", "static", "Instance variables", "False", "False", "True", "True", "False", "False", "True"};
 int counter =0;    
 int response;
-       boolean questionPopup(){
-            boolean test =false;
+
+       void questionPopup(){
          //int pick = (int) (Math.random()*5);
          //System.out.println(pick);
-            response = JOptionPane.showOptionDialog(null, Question[counter], "Espera! Primero una Pregunta!.", 0, JOptionPane.QUESTION_MESSAGE, null, multipleChoiceAnswers[counter], multipleChoiceAnswers[counter]);
+            response = JOptionPane.showOptionDialog(null, Question[counter], "You hear a voice from above ask...", 0, JOptionPane.QUESTION_MESSAGE, null, multipleChoiceAnswers[counter], multipleChoiceAnswers[counter]);
             if (multipleChoiceAnswers[counter][response] == CorrectAnswers[counter]){
-                test= true;
+                    makeDoor.doorOption();
             } else {
-                lifePoints--;
+                System.out.println("Life -1");
             }
             counter++;
-            return test;
            }
 
     
-public static void main(String[] args) {
-    questionTemp tester = new questionTemp();
-    tester.questionPopup();
-    tester.questionPopup();
-}
+
 
 }
  

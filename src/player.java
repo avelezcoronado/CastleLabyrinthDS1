@@ -1,11 +1,11 @@
-import javax.swing.JOptionPane;
-
 public class player {
-    int lifePoints;
-    String heroName;
+    String playerName;
+    int lifePoints = 10;
 
-    public player(){
-       heroName = JOptionPane.showInputDialog(null, "What is your name hero?");
-       lifePoints=5;
+    void Newplayer(String name, int lives) {
+        name = playerName;
+        lives = lifePoints;
+
     }
+
 }
