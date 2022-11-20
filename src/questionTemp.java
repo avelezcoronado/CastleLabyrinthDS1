@@ -3,7 +3,6 @@ import javax.swing.JOptionPane;
 public class QuestionTemp {
 
     doors makeDoor = new doors();
-    int counter = 0;
 
     String Question[] = {
             "Which statement is true about Java?",
@@ -93,10 +92,13 @@ public class QuestionTemp {
     void questionPopup(Player player) {
         // int pick = (int) (Math.random()*5);
         // System.out.println(pick);
+        int counter = player.getCounter();
         response = JOptionPane.showOptionDialog(null, Question[counter], "You hear a voice from above ask...", 0,
                 JOptionPane.QUESTION_MESSAGE, null, multipleChoiceAnswers[counter], multipleChoiceAnswers[counter]);
+        player.setCounter(counter+1);
         if (multipleChoiceAnswers[counter][response] == CorrectAnswers[counter]) {
             player.setCorrectQuestions(player.getCorrectQuestions() + 1);
+            JOptionPane.showMessageDialog(null,"Correct!");
             makeDoor.doorOption(player);   
             if(player.getCorrectQuestions()==5){
                 //add boss fight
@@ -104,11 +106,10 @@ public class QuestionTemp {
             }
         } else {
             player.setLifePoints(player.getLifePoints() - 1);
-            counter++;
-
+            JOptionPane.showMessageDialog(null,"Wrong answer! You lost 1 life");
+            makeDoor.doorOption(player);
             
         }
-        counter++;
 
     }
 
