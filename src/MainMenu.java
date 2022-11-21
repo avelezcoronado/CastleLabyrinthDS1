@@ -34,7 +34,7 @@ public class MainMenu {
                 });
 
                 jLabel3.setIcon(new javax.swing.ImageIcon(
-                                "/Users/aaaronvelez/NetBeansProjects/CastleLabyrinth/src/Images/ASCII-Castle1.jpg")); // NOI18N
+                                "./src/characterImages/castle.jpg")); // NOI18N
                 jLabel3.setText("jLabel3");
 
                 javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

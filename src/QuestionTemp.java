@@ -105,13 +105,17 @@ public class QuestionTemp {
         if (multipleChoiceAnswers[counter][response] == CorrectAnswers[counter]) {
             player.setCorrectQuestions(player.getCorrectQuestions() + 1);
             JOptionPane.showMessageDialog(null, "Correct!");
-            makeDoor.doorOption(player);
             if (player.getCorrectQuestions() == 5) {
                 // add boss fight
                 System.out.println("boss fight");
+                BossFight bossfight = new BossFight();
+                bossfight.FinalFight(player);
+            } else {
+                makeDoor.doorOption(player);
             }
         } else {
             player.setLifePoints(player.getLifePoints() - 1);
+
             JOptionPane.showMessageDialog(null, "Wrong answer! You lost 1 life");
             if (player.getLifePoints() == 0) {
                 System.out.println("Lost");

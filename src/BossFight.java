@@ -7,7 +7,7 @@ import javax.swing.JTextArea;
 
 public class BossFight {
 
-    void FinalFight() {
+    void FinalFight(Player player) {
         JFrame gameFrame = new JFrame();
         JPanel doorsPanel = new javax.swing.JPanel();
         JLabel jLabel1 = new javax.swing.JLabel();
@@ -35,12 +35,12 @@ public class BossFight {
         progressCounter.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
         progressCounter.setForeground(new java.awt.Color(255, 255, 255));
         progressCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        progressCounter.setText("0");
+        progressCounter.setText(Integer.toString(player.getCorrectQuestions())+"/5");
 
         progressText.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
         progressText.setForeground(new java.awt.Color(255, 255, 255));
         progressText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        progressText.setText("progress:");
+        progressText.setText("Progress:");
 
         characterTitle.setFont(new java.awt.Font("Trattatello", 0, 48)); // NOI18N
         characterTitle.setForeground(new java.awt.Color(255, 255, 255));
@@ -55,10 +55,9 @@ public class BossFight {
         livesCounter.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
         livesCounter.setForeground(new java.awt.Color(255, 255, 255));
         livesCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        livesCounter.setText("10");
+        livesCounter.setText(Integer.toString(player.getLifePoints()));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(
-                getClass().getResource("/com/mycompany/castlelabyrinthv2/resources/boss.jpeg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("./src/characterImages/boss.jpeg")); // NOI18N
         jLabel2.setText("jLabel2");
 
         jTextArea1.setEditable(false);

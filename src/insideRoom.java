@@ -17,22 +17,22 @@ public class insideRoom {
         int[] heal = { 1, 2, 1, 2, 2, 2, 1, 2, 2 };
 
         String[] monsterImagePaths = {
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/medusa.png",
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/witch.png",
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/werewolf.png",
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/vampire.png",
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/ogre.png",
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/skeleton.png",
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/dragon.png" };
+                        "./src/characterImages/medusa.png",
+                        "./src/characterImages/witch.png",
+                        "./src/characterImages/werewolf.png",
+                        "./src/characterImages/vampire.png",
+                        "./src/characterImages/ogre.png",
+                        "./src/characterImages/skeleton.png",
+                        "./src/characterImages/dragon.png" };
         String[] heroImagePaths = {
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/angel.png",
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/ghost.png",
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/elf.png",
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/pegasus.png",
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/unicorn.png",
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/king.png",
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/phoenix.png",
-                        "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/death.png" };
+                        "./src/characterImages/angel.png",
+                        "./src/characterImages/ghost.png",
+                        "./src/characterImages/elf.png",
+                        "./src/characterImages/pegasus.png",
+                        "./src/characterImages/unicorn.png",
+                        "./src/characterImages/king.png",
+                        "./src/characterImages/phoenix.png",
+                        "./src/characterImages/death.png" };
 
         /*
          * void newDoors() {
