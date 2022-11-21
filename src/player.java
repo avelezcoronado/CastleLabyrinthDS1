@@ -2,6 +2,7 @@ public class Player {
     String playerName;
     int lifePoints = 10;
     int correctQuestions = 0;
+    int counter = 0;
 
     public Player(String name) {
         playerName = name;
@@ -20,6 +21,10 @@ public class Player {
         return this.correctQuestions;
     }
 
+    public int getCounter(){
+        return this.counter;
+    }
+
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
     }
@@ -30,6 +35,10 @@ public class Player {
 
     public void setCorrectQuestions(int correctQuestions) {
         this.correctQuestions = correctQuestions;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
     }
 
 }

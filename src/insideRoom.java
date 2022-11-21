@@ -81,7 +81,7 @@ public class insideRoom {
                 JButton runBtn = new javax.swing.JButton();
                 JLabel characterTitle = new javax.swing.JLabel();
                 JLabel characterIcon = new javax.swing.JLabel();
-                QuestionTemp questionPopup = new QuestionTemp();
+                QuestionTemp questions = new QuestionTemp();
 
                 gameFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,6 +95,7 @@ public class insideRoom {
                 jLabel1.setForeground(new java.awt.Color(255, 255, 255));
 
                 attackBtn.setFont(new java.awt.Font("Trattatello", 0, 24)); // NOI18N
+                runBtn.setFont(new java.awt.Font("Trattatello", 0, 18)); // NOI18N
 
                 int friendOrFoe = (int) (Math.random() * 5) + 1;
                 if (friendOrFoe > 1) {
@@ -110,15 +111,18 @@ public class insideRoom {
                         jLabel1.setText("Oh No! You found a...");
                         attackBtn.setText("Attack!!");
                         runBtn.setText("Run To The Door!");
-                        int damageOrKill = (int) Math.random() * 2;
+                        int damageOrKill = (int) (Math.random() * 2);
                         if (damageOrKill == 0) {
                                 attackBtn.addActionListener(new java.awt.event.ActionListener() {
                                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                                 JOptionPane.showMessageDialog(null,
                                                                 "You fought the " + monsters[monsterChooser]
-                                                                                + " and won ,  but took"
-                                                                                + damage[monsterChooser]);
+                                                                                + " and won, but took "
+                                                                                + damage[monsterChooser] + " life");
                                                 player.setLifePoints(player.getLifePoints() - damage[monsterChooser]);
+
+                                                questions.questionPopup(player);
+                                                gameFrame.dispose();
 
                                         }
                                 });
@@ -129,11 +133,22 @@ public class insideRoom {
                                                 JOptionPane.showMessageDialog(null,
                                                                 "You fought the " + monsters[monsterChooser]
                                                                                 + " and won, NO DAMAGE TAKEN!");
+                                                questions.questionPopup(player);
+                                                gameFrame.dispose();
 
                                         }
                                 });
 
                         }
+
+                        runBtn.addActionListener(new java.awt.event.ActionListener() {
+                                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        questions.questionPopup(player);
+                                        gameFrame.dispose();
+
+                                }
+                        });
+
                 } else {
                         jLabel1.setText("Look! It's A...");
                         int friendChooser = (int) (Math.random() * 7);
@@ -154,20 +169,18 @@ public class insideRoom {
                         runBtn.addActionListener(new java.awt.event.ActionListener() {
                                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                                         JOptionPane.showMessageDialog(null,
-                                                        "You thank the " + helpers[friendChooser] + "and move on");
+                                                        "The " + helpers[friendChooser] + " gave you "
+                                                                        + heal[friendChooser]
+                                                                        + "life! You thank him and move on");
+                                        player.setLifePoints(player.getLifePoints() + heal[friendChooser]);
+                                        questions.questionPopup(player);
+
+                                        gameFrame.dispose();
 
                                 }
                         });
 
                 }
-
-                runBtn.setFont(new java.awt.Font("Trattatello", 0, 18)); // NOI18N
-
-                runBtn.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-                        }
-                });
 
                 characterIcon.setText("jLabel2");
                 characterIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
