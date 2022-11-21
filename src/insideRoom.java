@@ -85,7 +85,7 @@ public class insideRoom {
                 JLabel correctCounter = new javax.swing.JLabel();
                 JLabel progressText = new javax.swing.JLabel();
                 JLabel livesText = new javax.swing.JLabel();
-                JLabel livesCountter = new javax.swing.JLabel();
+                JLabel livesCounter = new javax.swing.JLabel();
 
                 gameFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,22 +104,22 @@ public class insideRoom {
                 correctCounter.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
                 correctCounter.setForeground(new java.awt.Color(255, 255, 255));
                 correctCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                correctCounter.setText("0");
+                correctCounter.setText(Integer.toString(player.getCorrectQuestions())+ "/5");
 
                 progressText.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
                 progressText.setForeground(new java.awt.Color(255, 255, 255));
                 progressText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                progressText.setText("progress:");
+                progressText.setText("Progress:");
 
                 livesText.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
                 livesText.setForeground(new java.awt.Color(255, 255, 255));
                 livesText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                 livesText.setText("Lives:");
 
-                livesCountter.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
-                livesCountter.setForeground(new java.awt.Color(255, 255, 255));
-                livesCountter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                livesCountter.setText("10");
+                livesCounter.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
+                livesCounter.setForeground(new java.awt.Color(255, 255, 255));
+                livesCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                livesCounter.setText(Integer.toString(player.getLifePoints()));
 
                 int friendOrFoe = (int) (Math.random() * 5) + 1;
                 if (friendOrFoe > 1) {
@@ -143,6 +143,8 @@ public class insideRoom {
                                                                 "You fought the " + monsters[monsterChooser]
                                                                                 + " and won, but you took some damage. You lost "+damage[monsterChooser]+" live(s).");
                                                 player.setLifePoints(player.getLifePoints() - damage[monsterChooser]);
+                                                livesCounter.setText(Integer.toString(player.getLifePoints()));
+
                                                 if (player.getLifePoints() == 0){
                                                         //end game
                                                         System.out.println(player.getLifePoints());
@@ -162,6 +164,7 @@ public class insideRoom {
                                                                         "The " + monsters[monsterChooser]+ " cut your path off and chased you out the room! You're one door further from escaping.");
                                                 if (player.getCorrectQuestions() != 0){
                                                         player.setCorrectQuestions(player.getCorrectQuestions()-1);
+                                                        correctCounter.setText(Integer.toString(player.getCorrectQuestions())+ "/5");
 
                                                 }
                                                 questions.questionPopup(player);
@@ -188,6 +191,8 @@ public class insideRoom {
                                                 JOptionPane.showMessageDialog(null,
                                                                         "You made it out the door, but you took some damage. You lost "+damage[monsterChooser]+" live(s).");
                                                 player.setLifePoints(player.getLifePoints() - damage[monsterChooser]);
+                                                livesCounter.setText(Integer.toString(player.getLifePoints()));
+
                                                 if (player.getLifePoints() == 0){
                                                         //end game
                                                         System.out.println(player.getLifePoints());
@@ -229,6 +234,8 @@ public class insideRoom {
                                                                         + heal[friendChooser]
                                                                         + " heart(s)! You thank him and move on.");
                                         player.setLifePoints(player.getLifePoints() + heal[friendChooser]);
+                                        livesCounter.setText(Integer.toString(player.getLifePoints()));
+
                                         questions.questionPopup(player);
 
                                         gameFrame.dispose();
@@ -298,7 +305,7 @@ public class insideRoom {
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                 51,
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(livesCountter,
+                                                                                .addComponent(livesCounter,
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                 51,
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -328,7 +335,7 @@ public class insideRoom {
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                 59,
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(livesCountter,
+                                                                                .addComponent(livesCounter,
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                 59,
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
