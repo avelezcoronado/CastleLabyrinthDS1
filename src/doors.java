@@ -224,6 +224,7 @@ public class doors {
                                                                 .addContainerGap()));
                 gameFrame.setResizable(false);
                 gameFrame.setSize(1130, 659);
+
                 gameFrame.setLocationRelativeTo(null);
                 gameFrame.setVisible(true);
                 gameFrame.pack();

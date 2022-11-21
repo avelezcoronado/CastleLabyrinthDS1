@@ -113,7 +113,7 @@ public class MainMenu {
                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addContainerGap()));
-                gameFrame.setSize(1130,659);
+                gameFrame.setSize(1130, 659);
 
                 gameFrame.setLocationRelativeTo(null);
                 gameFrame.setVisible(true);
