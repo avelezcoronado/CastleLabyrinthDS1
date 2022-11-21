@@ -1,12 +1,12 @@
 public class Player {
     String playerName;
-    int lifePoints = 7;
+    int lifePoints;
     int correctQuestions = 0;
     int counter = 0;
 
     public Player(String name) {
         playerName = name;
-        lifePoints = 7;
+        lifePoints = 5;
     }
 
     public String getPlayerName() {

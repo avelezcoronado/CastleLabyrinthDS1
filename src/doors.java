@@ -32,17 +32,17 @@ public class doors {
                 progressText.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
                 progressText.setForeground(new java.awt.Color(255, 255, 255));
                 progressText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                progressText.setText("progress:");
+                progressText.setText("Progress:");
 
                 progressCounter.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
                 progressCounter.setForeground(new java.awt.Color(255, 255, 255));
                 progressCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                progressCounter.setText("0");
+                progressCounter.setText(Integer.toString(player.getCorrectQuestions())+"/5");
 
                 livesCounter.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
                 livesCounter.setForeground(new java.awt.Color(255, 255, 255));
                 livesCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                livesCounter.setText("10");
+                livesCounter.setText(Integer.toString(player.getLifePoints()));
 
                 livesText.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
                 livesText.setForeground(new java.awt.Color(255, 255, 255));
@@ -140,7 +140,7 @@ public class doors {
                                                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                                                 .addComponent(progressCounter,
                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                30,
+                                                                                                                51,
                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                                 .addGap(29, 29, 29)));
                 enterNameLayout.setVerticalGroup(
