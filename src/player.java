@@ -12,16 +12,16 @@ public class Player {
     public String getPlayerName() {
         return this.playerName;
     }
- 
-    public int getLifePoints(){
+
+    public int getLifePoints() {
         return this.lifePoints;
     }
 
-    public int getCorrectQuestions(){
+    public int getCorrectQuestions() {
         return this.correctQuestions;
     }
 
-    public int getCounter(){
+    public int getCounter() {
         return this.counter;
     }
 
