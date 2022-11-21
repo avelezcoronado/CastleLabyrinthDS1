@@ -117,13 +117,34 @@ public class insideRoom {
                                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                                 JOptionPane.showMessageDialog(null,
                                                                 "You fought the " + monsters[monsterChooser]
-                                                                                + " and won, but took "
-                                                                                + damage[monsterChooser] + " life");
+                                                                                + " and won, but you took some damage. You lost "+damage[monsterChooser]+" live(s).");
                                                 player.setLifePoints(player.getLifePoints() - damage[monsterChooser]);
+                                                if (player.getLifePoints() == 0){
+                                                        //end game
+                                                        System.out.println(player.getLifePoints());
+                                                gameFrame.dispose();
+                                                } else{
+                                                        
+                                                        questions.questionPopup(player);
+                                                gameFrame.dispose();
+                                                }
+                                                
 
+                                        }
+                                });
+                                runBtn.addActionListener(new java.awt.event.ActionListener() {
+                                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                                JOptionPane.showMessageDialog(null,
+                                                                        "The " + monsters[monsterChooser]+ " cut your path off and chased you out the room! You're one door further from escaping.");
+                                                if (player.getCorrectQuestions() != 0){
+                                                        player.setCorrectQuestions(player.getCorrectQuestions()-1);
+
+                                                }
                                                 questions.questionPopup(player);
+
                                                 gameFrame.dispose();
 
+        
                                         }
                                 });
 
@@ -138,16 +159,27 @@ public class insideRoom {
 
                                         }
                                 });
+                                runBtn.addActionListener(new java.awt.event.ActionListener() {
+                                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                                JOptionPane.showMessageDialog(null,
+                                                                        "You made it out the door, but you took some damage. You lost "+damage[monsterChooser]+" live(s).");
+                                                player.setLifePoints(player.getLifePoints() - damage[monsterChooser]);
+                                                if (player.getLifePoints() == 0){
+                                                        //end game
+                                                        System.out.println(player.getLifePoints());
+                                                gameFrame.dispose();
+                                                } else{
+                                                        
+                                                        questions.questionPopup(player);
+                                                gameFrame.dispose();
+                                                }
+        
+                                        }
+                                });
 
                         }
 
-                        runBtn.addActionListener(new java.awt.event.ActionListener() {
-                                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        questions.questionPopup(player);
-                                        gameFrame.dispose();
-
-                                }
-                        });
+                        
 
                 } else {
                         jLabel1.setText("Look! It's A...");
@@ -171,7 +203,7 @@ public class insideRoom {
                                         JOptionPane.showMessageDialog(null,
                                                         "The " + helpers[friendChooser] + " gave you "
                                                                         + heal[friendChooser]
-                                                                        + "life! You thank him and move on");
+                                                                        + " heart(s)! You thank him and move on.");
                                         player.setLifePoints(player.getLifePoints() + heal[friendChooser]);
                                         questions.questionPopup(player);
 
@@ -181,6 +213,8 @@ public class insideRoom {
                         });
 
                 }
+
+                
 
                 characterIcon.setText("jLabel2");
                 characterIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

@@ -107,7 +107,13 @@ public class QuestionTemp {
         } else {
             player.setLifePoints(player.getLifePoints() - 1);
             JOptionPane.showMessageDialog(null,"Wrong answer! You lost 1 life");
-            makeDoor.doorOption(player);
+            if (player.getLifePoints() == 0){
+                System.out.println("Lost");
+                // frame end game, play again
+            } else {
+                makeDoor.doorOption(player);
+            }
+            
             
         }
 
