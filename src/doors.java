@@ -24,6 +24,30 @@ public class doors {
                 JButton rightDoorBtn = new javax.swing.JButton();
                 JLabel leftDoorImage = new javax.swing.JLabel();
                 JLabel rightDoorImage = new javax.swing.JLabel();
+                JLabel progressText = new javax.swing.JLabel();
+                JLabel progressCounter = new javax.swing.JLabel();
+                JLabel livesCounter = new javax.swing.JLabel();
+                JLabel livesText = new javax.swing.JLabel();
+
+                progressText.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
+                progressText.setForeground(new java.awt.Color(255, 255, 255));
+                progressText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                progressText.setText("progress:");
+
+                progressCounter.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
+                progressCounter.setForeground(new java.awt.Color(255, 255, 255));
+                progressCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                progressCounter.setText("0");
+
+                livesCounter.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
+                livesCounter.setForeground(new java.awt.Color(255, 255, 255));
+                livesCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                livesCounter.setText("10");
+
+                livesText.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
+                livesText.setForeground(new java.awt.Color(255, 255, 255));
+                livesText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                livesText.setText("Lives:");
 
                 gameFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                 gameFrame.setSize(new java.awt.Dimension(700, 500));
@@ -100,36 +124,82 @@ public class doors {
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                 421,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(314, 314, 314)));
+                                                                .addGap(149, 149, 149)
+                                                                .addGroup(enterNameLayout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                                enterNameLayout.createSequentialGroup()
+                                                                                                                .addComponent(livesText)
+                                                                                                                .addPreferredGap(
+                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                                                .addComponent(livesCounter))
+                                                                                .addGroup(enterNameLayout
+                                                                                                .createSequentialGroup()
+                                                                                                .addComponent(progressText)
+                                                                                                .addPreferredGap(
+                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                                .addComponent(progressCounter,
+                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                30,
+                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                .addGap(29, 29, 29)));
                 enterNameLayout.setVerticalGroup(
                                 enterNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(enterNameLayout.createSequentialGroup()
-                                                                .addComponent(jLabel1,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                104,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                18,
-                                                                                Short.MAX_VALUE)
-                                                                .addGroup(
-                                                                                enterNameLayout.createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                                .addComponent(rightDoorImage,
+                                                                .addGroup(enterNameLayout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                .addGroup(enterNameLayout
+                                                                                                .createSequentialGroup()
+                                                                                                .addComponent(jLabel1,
                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                449,
+                                                                                                                104,
                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addComponent(leftDoorImage,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                449,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                                .addGap(0, 6, Short.MAX_VALUE))
+                                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                                enterNameLayout.createSequentialGroup()
+                                                                                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                                                                                .addGroup(enterNameLayout
+                                                                                                                                .createParallelGroup(
+                                                                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                                                                                .addComponent(livesText,
+                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                48,
+                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                                                .addComponent(livesCounter,
+                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                45,
+                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                                                .addPreferredGap(
+                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                                                .addGroup(enterNameLayout
+                                                                                                                                .createParallelGroup(
+                                                                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                                                                                .addComponent(progressText,
+                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                44,
+                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                                                .addComponent(progressCounter,
+                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                38,
+                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addGroup(enterNameLayout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                                .addComponent(rightDoorImage,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                449,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(leftDoorImage,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                449,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addPreferredGap(
                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addGroup(
-                                                                                enterNameLayout.createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                                .addComponent(leftDoorBtn)
-                                                                                                .addComponent(rightDoorBtn))
+                                                                .addGroup(enterNameLayout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                .addComponent(rightDoorBtn)
+                                                                                .addComponent(leftDoorBtn))
                                                                 .addGap(21, 21, 21)));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(gameFrame.getContentPane());
