@@ -115,10 +115,11 @@ public class insideRoom {
                                 attackBtn.addActionListener(new java.awt.event.ActionListener() {
                                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                                 JOptionPane.showMessageDialog(null,
-                                                                "You fought the " + monsters[monsterChooser]+ " and won ,  but took" + damage[monsterChooser]);
-                                                player.setLifePoints(player.getLifePoints()-damage[monsterChooser]);
-                                                
-  
+                                                                "You fought the " + monsters[monsterChooser]
+                                                                                + " and won ,  but took"
+                                                                                + damage[monsterChooser]);
+                                                player.setLifePoints(player.getLifePoints() - damage[monsterChooser]);
+
                                         }
                                 });
 
@@ -141,7 +142,7 @@ public class insideRoom {
                         Image image = imageIcon.getImage(); // transform it
                         Image newimg = image.getScaledInstance(350, 350, java.awt.Image.SCALE_SMOOTH);
 
-                                                                               // smooth way
+                        // smooth way
                         imageIcon = new ImageIcon(newimg);
                         characterIcon.setIcon(imageIcon);
 

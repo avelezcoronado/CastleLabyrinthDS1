@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class enterName {
-        gameIntroduction intro = new gameIntroduction();
+        GameInstructions instruct = new GameInstructions();
 
         void nameInput() {
                 JFrame gameFrame = new JFrame();
@@ -40,7 +40,8 @@ public class enterName {
                 beginGame.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 Player player = new Player(nameInput.getText());
-                                intro.introframe(player);
+                                instruct.howToPlay(player);
+
                                 gameFrame.dispose();
 
                         }
