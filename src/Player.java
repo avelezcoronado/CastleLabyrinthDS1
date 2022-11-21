@@ -3,6 +3,7 @@ public class Player {
     int lifePoints;
     int correctQuestions = 0;
     int counter = 0;
+    public static final int END_GAME = 1;
 
     public Player(String name) {
         playerName = name;

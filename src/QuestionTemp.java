@@ -105,7 +105,7 @@ public class QuestionTemp {
         if (multipleChoiceAnswers[counter][response] == CorrectAnswers[counter]) {
             player.setCorrectQuestions(player.getCorrectQuestions() + 1);
             JOptionPane.showMessageDialog(null, "Correct!");
-            if (player.getCorrectQuestions() == 5) {
+            if (player.getCorrectQuestions() == Player.END_GAME) {
                 // add boss fight
                 System.out.println("boss fight");
                 BossFight bossfight = new BossFight();
@@ -117,8 +117,9 @@ public class QuestionTemp {
             player.setLifePoints(player.getLifePoints() - 1);
 
             JOptionPane.showMessageDialog(null, "Wrong answer! You lost 1 life");
-            if (player.getLifePoints() == 0) {
-                System.out.println("Lost");
+            if (player.getLifePoints() <= 0) {
+                loseFrame lose = new loseFrame();
+                lose.youLost();
                 // frame end game, play again
             } else {
                 makeDoor.doorOption(player);

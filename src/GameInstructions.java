@@ -41,7 +41,7 @@ public class GameInstructions {
                 jTextArea2.setLineWrap(true);
                 jTextArea2.setRows(5);
                 jTextArea2.setText(
-                                "Obective: Find your way to the exit of the castle through a maze of rooms filled with mythical monsters and heros...\nTo fight the monster or try and run around is your choice...but you must face the consequences.\n\nBefore entering a room a mysterious voice asks you a question...get it right and move forward, get it wrong and lose a life.With only 7 lives you better be prepared...5 Questions right and your free!\n\nGood Luck,\nThe Castle Keeper");
+                                "Objective: Find your way to the exit of the castle through a maze of rooms filled with mythical monsters and heros...\nTo fight the monster or try and run around is your choice...but you must face the consequences.\n\nBefore entering a room a mysterious voice asks you a question...get it right and move forward, get it wrong and lose a life.With only "+Integer.toString(player.getLifePoints())+" lives you better be prepared... "+Integer.toString(Player.END_GAME)+" Questions right and you're free!\n\nGood Luck,\nThe Castle Keeper");
                 jTextArea2.setAutoscrolls(false);
                 jTextArea2.setRequestFocusEnabled(false);
                 jScrollPane2.setViewportView(jTextArea2);

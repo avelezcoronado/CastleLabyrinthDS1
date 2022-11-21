@@ -1,7 +1,10 @@
+import javax.swing.ImageIcon;
+import java.awt.Image;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 
 public class loseFrame {
 
@@ -21,8 +24,13 @@ public class loseFrame {
         doorsPanel.setForeground(new java.awt.Color(255, 255, 255));
 
         characterIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        characterIcon.setIcon(new javax.swing.ImageIcon(
-                "/Users/aaaronvelez/repos/CastleLabyrinth/CastleLabyrinth/src/characterImages/deathImage.png")); // NOI18N
+        ImageIcon imageIcon = new ImageIcon("./src/characterImages/deathImage.png"); // load the image to a
+                                                                                                // imageIcon
+        Image image = imageIcon.getImage(); // transform it
+        Image newimg = image.getScaledInstance(350, 350, java.awt.Image.SCALE_SMOOTH); // scale it the
+                                                                                                       // smooth way
+                        imageIcon = new ImageIcon(newimg);
+                        characterIcon.setIcon(imageIcon);
         characterIcon.setText("jLabel2");
         characterIcon.setMaximumSize(new java.awt.Dimension(900, 397));
         characterIcon.setMinimumSize(new java.awt.Dimension(1118, 397));
@@ -35,7 +43,7 @@ public class loseFrame {
         playAgain.setText("Close Game");
         playAgain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                gameFrame.dispose();
             }
         });
 
@@ -43,7 +51,9 @@ public class loseFrame {
         playAgain1.setText("Play Again");
         playAgain1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                RunGame test = new RunGame();
+                gameFrame.dispose();
+                test.fullGame();
             }
         });
 
@@ -79,7 +89,7 @@ public class loseFrame {
                                                 .addComponent(playAgain1, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(characterIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 1091,
+                                .addComponent(characterIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 400,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(32, Short.MAX_VALUE)));
 

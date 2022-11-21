@@ -22,6 +22,8 @@ public class BossFight {
         JButton jButton1 = new javax.swing.JButton();
         JButton jButton2 = new javax.swing.JButton();
         JButton jButton3 = new javax.swing.JButton();
+        Victory victory = new Victory();
+
 
         gameFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -35,7 +37,7 @@ public class BossFight {
         progressCounter.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
         progressCounter.setForeground(new java.awt.Color(255, 255, 255));
         progressCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        progressCounter.setText(Integer.toString(player.getCorrectQuestions())+"/5");
+        progressCounter.setText(Integer.toString(player.getCorrectQuestions())+"/"+Integer.toString(Player.END_GAME));
 
         progressText.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
         progressText.setForeground(new java.awt.Color(255, 255, 255));
@@ -78,7 +80,9 @@ public class BossFight {
         jButton1.setText("Schmitz");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                gameFrame.dispose();
+                loseFrame lose = new loseFrame();
+                lose.youLost();
             }
         });
 
@@ -86,7 +90,9 @@ public class BossFight {
         jButton2.setText("Schmitz");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gameFrame.dispose();
 
+                victory.winFrame();
             }
         });
 
@@ -94,7 +100,9 @@ public class BossFight {
         jButton3.setText("Schmitz");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gameFrame.dispose();
 
+                victory.winFrame();
             }
         });
 

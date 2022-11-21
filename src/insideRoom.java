@@ -104,7 +104,7 @@ public class insideRoom {
                 correctCounter.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
                 correctCounter.setForeground(new java.awt.Color(255, 255, 255));
                 correctCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                correctCounter.setText(Integer.toString(player.getCorrectQuestions())+ "/5");
+                correctCounter.setText(Integer.toString(player.getCorrectQuestions())+ "/"+Integer.toString(Player.END_GAME));
 
                 progressText.setFont(new java.awt.Font("Trattatello", 0, 36)); // NOI18N
                 progressText.setForeground(new java.awt.Color(255, 255, 255));
@@ -145,10 +145,11 @@ public class insideRoom {
                                                 player.setLifePoints(player.getLifePoints() - damage[monsterChooser]);
                                                 livesCounter.setText(Integer.toString(player.getLifePoints()));
 
-                                                if (player.getLifePoints() == 0){
+                                                if (player.getLifePoints() <= 0){
                                                         //end game
-                                                        System.out.println(player.getLifePoints());
                                                 gameFrame.dispose();
+                                                loseFrame lose = new loseFrame();
+                lose.youLost();
                                                 } else{
                                                         
                                                         questions.questionPopup(player);
@@ -193,10 +194,11 @@ public class insideRoom {
                                                 player.setLifePoints(player.getLifePoints() - damage[monsterChooser]);
                                                 livesCounter.setText(Integer.toString(player.getLifePoints()));
 
-                                                if (player.getLifePoints() == 0){
+                                                if (player.getLifePoints() <= 0){
                                                         //end game
-                                                        System.out.println(player.getLifePoints());
                                                 gameFrame.dispose();
+                                                loseFrame lose = new loseFrame();
+                lose.youLost();
                                                 } else{
                                                         
                                                         questions.questionPopup(player);

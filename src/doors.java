@@ -83,12 +83,12 @@ public class doors {
 
                 leftDoorImage.setIcon(
                                 new javax.swing.ImageIcon(
-                                                "./src/characterImages/doors.jpeg")); // NOI18N
+                                                "./src/characterImages/doors.png")); // NOI18N
                 leftDoorImage.setText("jLabel2");
 
                 rightDoorImage.setIcon(
                                 new javax.swing.ImageIcon(
-                                                "./src/characterImages/doors.jpeg")); // NOI18N
+                                                "./src/characterImages/doors.png")); // NOI18N
                 rightDoorImage.setText("jLabel2");
 
                 javax.swing.GroupLayout enterNameLayout = new javax.swing.GroupLayout(enterName);
